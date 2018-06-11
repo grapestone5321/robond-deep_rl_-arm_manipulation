@@ -20,9 +20,11 @@ The project folder, RoboND-DeepRL-Project, is already loaded into the project wo
 
 To launch the project for the first time, run the following:
 
+``` bash
 $ cd /home/workspace/RoboND-DeepRL-Project/build/x86_64/bin
-
 $ ./gazebo-arm.sh
+``` 
+
 
 Note: Gazebo can often take time to load. As a byproduct of that, you might see errors similar to the following -
 
