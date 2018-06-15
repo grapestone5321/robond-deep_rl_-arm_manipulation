@@ -69,9 +69,11 @@ For the contact/collision node -
 Refer to the API instructions to create the agent using the Create() function from the dqnAgent Class, in ArmPlugin::createAgent(). You will pass the variable names defined at the top of the file to this function call. You can also refer to the constructor in project_folder/c/dqnAgent.cpp for the same.
 
 ### 3. Velocity or position based control of arm joints
+
 Previously, we discussed how the DQN output is mapped to a particular action, which, for this project, is the control of each joint for the robotic arm. In ArmPlugin::updateAgent(), there are two existing approaches to control the joint movements. You can either use one of these approaches, or you can come up with your own solution.
 
-Velocity Control - The current value for a joint’s velocity is stored in the array vel with the array lengths based on the number of degrees of freedom for the arm. If you choose to select this control strategy, modify the following line of code to assign a new value to the variable velocity based on the current joint velocity and the associated delta value, actionVelDelta.
+- Velocity Control - The current value for a joint’s velocity is stored in the array vel with the array lengths based on the number of degrees of freedom for the arm. If you choose to select this control strategy, modify the following line of code to assign a new value to the variable velocity based on the current joint velocity and the associated delta value, actionVelDelta.
+
 
 float velocity = 0.0;
 
