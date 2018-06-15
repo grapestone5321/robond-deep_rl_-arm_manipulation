@@ -74,8 +74,9 @@ Previously, we discussed how the DQN output is mapped to a particular action, wh
 
 - Velocity Control - The current value for a joint’s velocity is stored in the array vel with the array lengths based on the number of degrees of freedom for the arm. If you choose to select this control strategy, modify the following line of code to assign a new value to the variable velocity based on the current joint velocity and the associated delta value, actionVelDelta.
 
-
+``` bash
 float velocity = 0.0;
+``` 
 
 Position Control - The current value for a joint’s position is stored in the array ref with the array lengths based on the number of degrees of freedom for the arm. If you choose to select this control strategy, modify the following line of code to assign a new value to the variable joint based on the current joint velocity and the associated delta value, actionJointDelta.
 
