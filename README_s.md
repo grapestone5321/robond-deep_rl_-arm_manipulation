@@ -47,7 +47,7 @@ The instructions to build and run the project on the TX2 can be found in the pro
 
 ## Tasks
 
-In the previous lesson, we discussed the code for the ArmPlugin.cpp file. As you might have noticed, the file has specific TODOs or tasks listed out for the Project. You have to complete each of those tasks in the following order - 
+``` bashIn the previous lesson, we discussed the code for the ArmPlugin.cpp file. As you might have noticed, the file has specific TODOs or tasks listed out for the Project. You have to complete each of those tasks in the following order - 
 
 ### 1. Subscribe to camera and collision topics.
 The nodes corresponding to each of the subscribers have already been defined and initialized. You will have to create the subscribers in the ArmPlugin::Load() function , as covered in the previous lesson, based on the following specifications - 
@@ -61,7 +61,7 @@ For the camera node -
 For the contact/collision node -
 - Node - collisionNode
 - Topic Name - /gazebo/arm_world/tube/tube_link/my_contact
-- Callback Function - ArmPlugin::onCollisionMsg (this should be a reference parameter)
+``` bash- Callback Function - ArmPlugin::onCollisionMsg (this should be a reference parameter)
 - Class Instance - refer to the same class, using the “this” pointer or keyword.
 
 ### 2. Create the DQN Agent
@@ -78,9 +78,11 @@ Previously, we discussed how the DQN output is mapped to a particular action, wh
 float velocity = 0.0;
 ``` 
 
-Position Control - The current value for a joint’s position is stored in the array ref with the array lengths based on the number of degrees of freedom for the arm. If you choose to select this control strategy, modify the following line of code to assign a new value to the variable joint based on the current joint velocity and the associated delta value, actionJointDelta.
+- Position Control - The current value for a joint’s position is stored in the array ref with the array lengths based on the number of degrees of freedom for the arm. If you choose to select this control strategy, modify the following line of code to assign a new value to the variable joint based on the current joint velocity and the associated delta value, actionJointDelta.
 
+``` bash
 float joint = 0.0;
+``` 
 
 TIP: To find out which joint’s value to change (corresponding index to either of the arrays, ref or vel) you can define the index as a function of the variable action. This is helpful if you want to have a more complicated (more degrees of freedom) arm without having to define new set of conditions. The default number of actions, defined in DQN.py, is 3; and there are two outputs for every action - increase or decrease in the joint angles.
 
