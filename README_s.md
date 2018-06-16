@@ -25,10 +25,11 @@ $ cd /home/workspace/RoboND-DeepRL-Project/build/x86_64/bin
 $ ./gazebo-arm.sh
 ``` 
 
+Note: Gazebo can often take time to load. As a byproduct of that, you might see errors similar to the following 
 
-Note: Gazebo can often take time to load. As a byproduct of that, you might see errors similar to the following -
-
+``` bash
 [Err] [Scene.cc:2927] Light [sun] not found. Use topic ~/factory/light to spawn a new light.
+``` 
 
 These errors should go away once Gazebo loads up completely, and can be ignored.
 
@@ -47,7 +48,7 @@ The instructions to build and run the project on the TX2 can be found in the pro
 
 ## Tasks
 
-``` bashIn the previous lesson, we discussed the code for the ArmPlugin.cpp file. As you might have noticed, the file has specific TODOs or tasks listed out for the Project. You have to complete each of those tasks in the following order - 
+In the previous lesson, we discussed the code for the ArmPlugin.cpp file. As you might have noticed, the file has specific TODOs or tasks listed out for the Project. You have to complete each of those tasks in the following order - 
 
 ### 1. Subscribe to camera and collision topics.
 The nodes corresponding to each of the subscribers have already been defined and initialized. You will have to create the subscribers in the ArmPlugin::Load() function , as covered in the previous lesson, based on the following specifications - 
@@ -61,7 +62,7 @@ For the camera node -
 For the contact/collision node -
 - Node - collisionNode
 - Topic Name - /gazebo/arm_world/tube/tube_link/my_contact
-``` bash- Callback Function - ArmPlugin::onCollisionMsg (this should be a reference parameter)
+- Callback Function - ArmPlugin::onCollisionMsg (this should be a reference parameter)
 - Class Instance - refer to the same class, using the “this” pointer or keyword.
 
 ### 2. Create the DQN Agent
@@ -136,8 +137,11 @@ $ cd build
 $ make
 $ cd x86_64/bin
 $ ./gazebo-arm.sh
+
 Note: Gazebo can often take time to load. As a byproduct of that, you might see errors similar to the following -
+
 [Err] [Scene.cc:2927] Light [sun] not found. Use topic ~/factory/light to spawn a new light.
+
 These errors should go away once Gazebo loads up completely, and can be ignored.
 Once the environment/gazebo is loaded, you should notice the arm trying to move but it might not be learning. This brings us to the next task for the project.
 
