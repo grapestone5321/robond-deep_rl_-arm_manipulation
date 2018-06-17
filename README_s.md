@@ -88,14 +88,10 @@ float joint = 0.0;
 TIP: To find out which joint’s value to change (corresponding index to either of the arrays, ref or vel) you can define the index as a function of the variable action. This is helpful if you want to have a more complicated (more degrees of freedom) arm without having to define new set of conditions. The default number of actions, defined in DQN.py, is 3; and there are two outputs for every action - increase or decrease in the joint angles.
 
 The next set of tasks are based on creating and assigning reward functions based on the required goals. There are a few important variables in relation to rewards - 
-
-rewardHistory - Value of the previous reward, you can set this to either a positive or a negative value.
-
-REWARD_WIN or REWARD_LOSS - The values for positive or negative rewards, respectively.
-
-newReward - If a reward has been issued or not.
-
-endEpisode - If the episode is over or not.
+- rewardHistory - Value of the previous reward, you can set this to either a positive or a negative value.
+- REWARD_WIN or REWARD_LOSS - The values for positive or negative rewards, respectively.
+- newReward - If a reward has been issued or not.
+- endEpisode - If the episode is over or not.
 
 Note - For each of the following, you have to decide what rewards to use, and whether or not it’s a new reward and whether or not to trigger an end of episode.
 
