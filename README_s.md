@@ -107,13 +107,14 @@ Using the above, you can check if the gripper is hitting the ground or not, and 
 In ArmPlugin.cpp a function called “BoxDistance()” calculates the distance between two bounding boxes. Using this function, calculate the distance between the arm and the object. Then, use this distance to calculate an appropriate reward as well.
 
 TIP: One recommended reward is a smoothed moving average of the delta of the distance to the goal. It can be calculated as - 
+
+``` bash
 average_delta  = (average_delta * alpha) + (dist * (1 - alpha));
+```
 
 As we covered in the previous section, there are two primary objectives to the project - 
-
-Any part of the robot arm should touch the object with atleast an accuracy of 90%.
-
-Only the gripper base of the robot arm should touch the object with at least an accuracy of 80%.
+1. Any part of the robot arm should touch the object with atleast an accuracy of 90%.
+2. Only the gripper base of the robot arm should touch the object with at least an accuracy of 80%.
 
 The following reward function will help you with the first part of the objectives.
 
