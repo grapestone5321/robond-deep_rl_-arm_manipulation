@@ -129,16 +129,22 @@ called collision2.
 
 At this stage, it’s recommended that you test your project so far. Once in your project folder - 
 
+``` bash
 $ cd build
 $ make
 $ cd x86_64/bin
 $ ./gazebo-arm.sh
+```
+
 
 Note: Gazebo can often take time to load. As a byproduct of that, you might see errors similar to the following -
 
+``` bash
 [Err] [Scene.cc:2927] Light [sun] not found. Use topic ~/factory/light to spawn a new light.
+``` 
 
 These errors should go away once Gazebo loads up completely, and can be ignored.
+
 Once the environment/gazebo is loaded, you should notice the arm trying to move but it might not be learning. This brings us to the next task for the project.
 
 ### 7. Tuning the hyperparameters
