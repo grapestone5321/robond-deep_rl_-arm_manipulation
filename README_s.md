@@ -148,7 +148,10 @@ These errors should go away once Gazebo loads up completely, and can be ignored.
 Once the environment/gazebo is loaded, you should notice the arm trying to move but it might not be learning. This brings us to the next task for the project.
 
 ### 7. Tuning the hyperparameters
+
 The list of hyperparameters that you can tune is provided in ArmPlugin.cpp file, at the top. They are also listed below:
+
+``` bash
 #define INPUT_WIDTH   512
 #define INPUT_HEIGHT  512
 #define OPTIMIZER "None"
@@ -157,6 +160,7 @@ The list of hyperparameters that you can tune is provided in ArmPlugin.cpp file,
 #define BATCH_SIZE 8
 #define USE_LSTM false
 #define LSTM_SIZE 32
+``` 
 
 Tune the above hyperparameters to obtain the required accuracy. You might also have to revisit your reward functions and tune or modify them as needed.
 
