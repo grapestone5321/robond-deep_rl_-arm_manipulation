@@ -171,3 +171,15 @@ For this task of the project, modify the collision check defined in task 6, to c
 
 Run your project again, and observe how the agent performs. Tune the rewards or the hyperparameters to obtain the required accuracy, if required. 
 
+
+## Recap
+
+You have done a great job so far with this project! Let’s recap what you have covered:
+- You learned to use a C++ API that was developed by Nvidia and optimized specifically for embedded platforms, like the TX2.
+- You learned to create a DQN agent using the API and learned to define reward functions for performing tasks in two different environments - catching a ball, and locating a “fruit” object.
+- You then created your own agent for a new environment - a robotic arm in gazebo.
+- Finally, you defined reward functions and tuned the hyperparameters for your RL agent to train the robot arm to perform specific tasks, like interacting with the object of interest in that environment
+
+
+
+
