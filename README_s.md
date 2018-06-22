@@ -181,5 +181,53 @@ You have done a great job so far with this project! Let’s recap what you have 
 - Finally, you defined reward functions and tuned the hyperparameters for your RL agent to train the robot arm to perform specific tasks, like interacting with the object of interest in that environment
 
 
+## Project Challenges
 
+In this section, we will provide you with a few challenges to test your existing solution on. Try and experiment with your solution to see how high an accuracy you can get with the gripper base touching the object. 
+
+Note: Only attempt these challenges AFTER you have completed the project objectives. These challenges are not required for your project submission, but you are encouraged to try them out.
+
+1. Object Randomization
+
+In the project, so far, the object of interest was placed at the same location, throughout. For this challenge, the object will instantiate at different locations along the x-axis. Follow these steps and test your solution:
+
+In PropPlugin.cpp, redefine the prop poses in PropPlugin::Randomize() to the following:
+
+pose.pos.x = randf(0.02f, 0.30f);
+
+pose.pos.y = 0.0f;
+
+pose.pos.z = 0.0f;
+
+In ArmPlugin.cpp, replace ResetPropDynamics(); set in the method ArmPlugin::updateJoints() with RandomizeProps();
+
+2. Increasing the Arm’s Reach
+
+As you might have noticed in the gazebo-arm.world file, the arm’s base has a revolute joint. However, in the project, that was disabled to restrict the arm’s reach to a specific axis. In this challenge, the object’s starting location will be changed, and the arm will be allowed to rotate about its base. Follow these steps to try this challenge:
+
+In gazebo-arm.world, modify the tube model’s pose to [0.75 0.75 0 0 0 0]
+
+In ArmPlugin.cpp, set the variable LOCKBASE to false.
+
+In ArmPlugin.cpp, replace RandomizeProps(); set in the method ArmPlugin::updateJoints() with ResetPropDynamics();
+
+3. Increasing Arm’s Reach with Object Randomization
+
+This challenge will build on top of the previous challenge:
+
+In gazebo-arm.world, modify the tube model’s pose to [0.75 0.75 0 0 0 0]
+
+In ArmPlugin.cpp, set the variable LOCKBASE to false.
+
+In ArmPlugin.cpp, replace ResetPropDynamics(); set in the method ArmPlugin::updateJoints() with RandomizeProps();
+
+In PropPlugin.cpp, redefine the prop poses in PropPlugin::Randomize() to the following:
+
+pose.pos.x = randf(0.35f, 0.45f);
+
+pose.pos.y = randf(-1.5f, 0.2f);
+
+pose.pos.z = 0.0f;
+
+Feel free to discuss these challenges with your fellow students in Slack, and share your results! Good luck with these, and please remember that you are not required to complete these challenges for your project submission.
 
