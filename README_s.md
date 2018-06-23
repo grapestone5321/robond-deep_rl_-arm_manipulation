@@ -187,7 +187,7 @@ In this section, we will provide you with a few challenges to test your existing
 
 Note: Only attempt these challenges AFTER you have completed the project objectives. These challenges are not required for your project submission, but you are encouraged to try them out.
 
-1. Object Randomization
+### 1. Object Randomization
 
 In the project, so far, the object of interest was placed at the same location, throughout. For this challenge, the object will instantiate at different locations along the x-axis. Follow these steps and test your solution:
 
