@@ -191,17 +191,17 @@ Note: Only attempt these challenges AFTER you have completed the project objecti
 
 In the project, so far, the object of interest was placed at the same location, throughout. For this challenge, the object will instantiate at different locations along the x-axis. Follow these steps and test your solution:
 
-In PropPlugin.cpp, redefine the prop poses in PropPlugin::Randomize() to the following:
+ 1. In PropPlugin.cpp, redefine the prop poses in PropPlugin::Randomize() to the following:
 
+``` bash
 pose.pos.x = randf(0.02f, 0.30f);
-
 pose.pos.y = 0.0f;
-
 pose.pos.z = 0.0f;
+``` 
 
-In ArmPlugin.cpp, replace ResetPropDynamics(); set in the method ArmPlugin::updateJoints() with RandomizeProps();
+ 2. In ArmPlugin.cpp, replace ResetPropDynamics(); set in the method ArmPlugin::updateJoints() with RandomizeProps();
 
-2. Increasing the Arm’s Reach
+### 2. Increasing the Arm’s Reach
 
 As you might have noticed in the gazebo-arm.world file, the arm’s base has a revolute joint. However, in the project, that was disabled to restrict the arm’s reach to a specific axis. In this challenge, the object’s starting location will be changed, and the arm will be allowed to rotate about its base. Follow these steps to try this challenge:
 
