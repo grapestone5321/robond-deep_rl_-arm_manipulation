@@ -205,13 +205,11 @@ pose.pos.z = 0.0f;
 
 As you might have noticed in the gazebo-arm.world file, the arm’s base has a revolute joint. However, in the project, that was disabled to restrict the arm’s reach to a specific axis. In this challenge, the object’s starting location will be changed, and the arm will be allowed to rotate about its base. Follow these steps to try this challenge:
 
-In gazebo-arm.world, modify the tube model’s pose to [0.75 0.75 0 0 0 0]
+ 1. In gazebo-arm.world, modify the tube model’s pose to [0.75 0.75 0 0 0 0]
+ 2. In ArmPlugin.cpp, set the variable LOCKBASE to false.
+ 3. In ArmPlugin.cpp, replace RandomizeProps(); set in the method ArmPlugin::updateJoints() with ResetPropDynamics();
 
-In ArmPlugin.cpp, set the variable LOCKBASE to false.
-
-In ArmPlugin.cpp, replace RandomizeProps(); set in the method ArmPlugin::updateJoints() with ResetPropDynamics();
-
-3. Increasing Arm’s Reach with Object Randomization
+### 3. Increasing Arm’s Reach with Object Randomization
 
 This challenge will build on top of the previous challenge:
 
