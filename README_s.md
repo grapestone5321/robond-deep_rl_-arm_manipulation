@@ -213,19 +213,16 @@ As you might have noticed in the gazebo-arm.world file, the arm’s base has a r
 
 This challenge will build on top of the previous challenge:
 
-In gazebo-arm.world, modify the tube model’s pose to [0.75 0.75 0 0 0 0]
+ 1. In gazebo-arm.world, modify the tube model’s pose to [0.75 0.75 0 0 0 0]
+ 2. In ArmPlugin.cpp, set the variable LOCKBASE to false.
+ 3. In ArmPlugin.cpp, replace ResetPropDynamics(); set in the method ArmPlugin::updateJoints() with RandomizeProps();
+ 4. In PropPlugin.cpp, redefine the prop poses in PropPlugin::Randomize() to the following:
 
-In ArmPlugin.cpp, set the variable LOCKBASE to false.
-
-In ArmPlugin.cpp, replace ResetPropDynamics(); set in the method ArmPlugin::updateJoints() with RandomizeProps();
-
-In PropPlugin.cpp, redefine the prop poses in PropPlugin::Randomize() to the following:
-
+``` bash
 pose.pos.x = randf(0.35f, 0.45f);
-
 pose.pos.y = randf(-1.5f, 0.2f);
-
 pose.pos.z = 0.0f;
+```
 
 Feel free to discuss these challenges with your fellow students in Slack, and share your results! Good luck with these, and please remember that you are not required to complete these challenges for your project submission.
 
